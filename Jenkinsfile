@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions, [], userRemoteConfigs: [[url: 'https://github.com/nurdinahmadalawiyah/simple-crud-api-spring-boot.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nurdinahmadalawiyah/simple-crud-api-spring-boot.git']])
                 sh 'mvn clean install'
                 echo 'Git Checkout Completed'
             }
