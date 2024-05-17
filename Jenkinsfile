@@ -38,7 +38,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dockerhub-pwd'. variable: 'dockerhub-password')]) {
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhub-password')]) {
                         sh ''' docker login -u nurdincode -p "%dockerhub-password" '''
                     }
                     sh 'docker push simple-crud-api-spring-boot:0.0.1'
